@@ -1,0 +1,173 @@
+
+<table id="pefilBasico">
+    
+    
+    <ul id="perfilPrim">
+        
+        <br>
+        <li>
+        Foto
+        </li>   
+        <br>
+        <li>
+            {{Usuario.nombre}}
+        </li>
+        <br>
+        <br>
+        <li>
+           
+            
+                    <ul>
+
+                        Informacion   
+                    </ul>
+                    &nbsp;&nbsp;
+                    &nbsp;&nbsp;
+                    <ul>
+
+                        Siguiendo
+
+                    </ul>
+                    &nbsp;&nbsp;
+                    &nbsp;&nbsp;
+                    &nbsp;&nbsp;
+
+                    <ul>
+
+                        Seguidores
+                    </ul>
+
+                    &nbsp;&nbsp;
+                    &nbsp;&nbsp;
+                    &nbsp;&nbsp;
+                    <ul>
+
+                        <a class="btn btn - botonAnimales">Animales</a>
+                    </ul>
+                    
+                
+                    
+        </li>
+       
+        <li >
+            
+            <ul id="espacio">
+            </ul>
+            
+        </li>
+
+    </ul>
+    
+    
+</table>
+
+<table  id="pefilContenido">
+
+
+    <a id="newAnimal">Registrar nuevo animal</a>
+
+
+
+
+
+</table>
+<br>
+<br>
+<div class="col-md-4" *ngFor=" let animal of animales">
+    <!--{{usuario.nombre}}-->
+    <p>Nombre: 
+        
+        <a (click)="irAAnimal(animal.id)">
+            
+            {{animal.nombre}} 
+        </a>
+        
+        Tipo: {{animal.tipo}} 
+
+    </p>
+   
+</div>   
+<br>
+<br>
+
+<div class="container p-5">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="mb-3">
+                <div class="card-header" style="background-color:rgb(175, 157, 0); color:rgb(255, 245, 224)">
+                    <h3 style="text-align: center;">Registra un animal</h3>
+                </div>
+                <div class="card-body" style="background-color:rgb(255, 248, 224);">
+                    <form (submit)="registrar()">
+                        
+                        <div class="mb-3">
+                            <label for=""> <b> Nombre</b> </label>
+                            <input type="text" name="nombre" [(ngModel)]="animal.nombre"
+                                placeholder="Ingrese el nombre" class="form-control"   
+                                autofocus required>
+                                
+                        </div>
+                        
+
+
+                        <div class="mb-3">
+                            <label for=""> <b> Tipo</b> </label>
+                                  <select name="tipo" [(ngModel)]="animal.tipo" class="form-control">
+                                    <option value="perro">Perro</option>
+                                    <option value="gato">Gato</option>
+                                  </select> 
+                        </div>
+                        
+
+
+                        <div class="mb-3">
+                            <label for=""> <b> Sexo</b> </label>                            
+                                <select name="sexo" [(ngModel)]="animal.sexo" class="form-control">
+                                    <option value="macho">Macho</option>
+                                    <option value="hembra">Hembra</option>
+                                  </select> 
+                        </div>  
+                        
+
+
+                        <div class="mb-3">
+                            <label for=""> <b> Fecha de nacimiento</b> </label>
+                            <input type="date" name="fNac" [(ngModel)]="animal.fNac" 
+                            class="form-control" required>                            
+                        </div>
+                        
+
+                        <div class="mb-3">
+                            <label for=""> <b> Tamaño</b> </label>                         
+                            
+                                <select name="tamano" [(ngModel)]="animal.tamano" class="form-control">
+                                    <option value="chico">Chico</option>
+                                    <option value="mediano">Mediano</option>
+                                    <option value="grande">Grande</option>
+                                  </select> 
+
+
+
+                        </div>
+                        
+
+                        <div class="mb-3">
+                            <label for=""> <b> Peso (kg)</b> </label>
+                            <input type="number" name="peso" [(ngModel)]="animal.peso" placeholder="Ingrese el peso"
+                                class="form-control" required> 
+                        </div>                            
+
+                        
+                        
+
+                        <div class="mb-3">
+                            <button class="btn btn-success btn-block"  value="animal" >
+                                Registrar</button>
+                            <input type="reset" value="Limpiar campos" class="btn btn-danger btn-block">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

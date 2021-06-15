@@ -1,0 +1,42 @@
+<div id="sidebar" class="sidebar">
+    <ul id="menu">
+        <br>
+        <br>
+        <br>
+        <br>
+        <li>
+            <button class="btn btn - boton1" routerLink=".">> Filtros</button>
+
+        </li>
+        <br>
+        <br>
+        <li>
+            <button class="btn btn - boton1" routerLink=".">> Excluir</button>
+
+        </li>
+        <br>
+        <br>
+        <li><button class="btn btn - boton2">Aplicar</button>
+
+        </li>
+
+    </ul>
+</div>
+<div id="container">
+    Aca empieza<br><br><br>
+    <div class="component">
+        <div class="col-md-4" *ngFor=" let animal of animales">
+            <!--{{usuario.nombre}}-->
+            <p>Nombre: 
+                
+                <a (click)="irAAnimal(animal.id)">
+                    
+                    {{animal.nombre}} 
+                </a>
+                
+            <b>DueñoID: {{animal.idDador}} </b> Tipo: {{animal.tipo}} </p>
+           
+        </div>   
+    </div>
+    <br>Termino... es para ver si lo pone a la derecha de los botones
+</div>
